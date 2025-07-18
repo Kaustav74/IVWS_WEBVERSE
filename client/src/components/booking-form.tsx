@@ -119,7 +119,7 @@ export default function BookingForm() {
           <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6 bg-gradient-to-r from-stellar-gold to-aurora-green bg-clip-text text-transparent">
             Book Your Experience
           </h2>
-          <p className="text-lg sm:text-xl visible-text max-w-3xl mx-auto px-4">
+          <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto px-4">
             Reserve your spot for an unforgettable journey through the cosmos
           </p>
         </motion.div>
@@ -130,32 +130,32 @@ export default function BookingForm() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <Card className="bg-gradient-to-br from-cosmic-purple/80 to-space-blue/80 border border-stellar-gold/20 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-center text-white flex items-center justify-center gap-2">
+          <Card className="bg-white/95 border-2 border-stellar-gold/50 shadow-2xl">
+            <CardHeader className="bg-gradient-to-r from-stellar-gold/20 to-aurora-green/20">
+              <CardTitle className="text-center text-gray-900 flex items-center justify-center gap-2 text-xl font-bold">
                 <Star className="w-6 h-6 text-stellar-gold" />
-                Streamlined Booking Process
+                Book Your Stargazing Experience
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Service Selection */}
-                  <div className="space-y-2">
-                    <Label htmlFor="service" className="text-white">
-                      <MapPin className="w-4 h-4 inline mr-2" />
+                  <div className="space-y-3">
+                    <Label htmlFor="service" className="text-gray-900 font-bold text-sm flex items-center">
+                      <MapPin className="w-4 h-4 inline mr-2 text-stellar-gold" />
                       Service Type
                     </Label>
                     <Select
                       value={formData.serviceType}
                       onValueChange={(value) => updateFormData('serviceType', value)}
                     >
-                      <SelectTrigger className="bg-space-blue/50 border-stellar-gold/30 text-white">
+                      <SelectTrigger className="bg-white border-2 border-gray-300 text-gray-900 font-medium h-12 focus:border-stellar-gold">
                         <SelectValue placeholder="Choose your experience" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-white">
                         {services.map((service) => (
-                          <SelectItem key={service.value} value={service.value}>
+                          <SelectItem key={service.value} value={service.value} className="text-gray-900">
                             {service.label} - {service.price}
                           </SelectItem>
                         ))}
@@ -164,36 +164,36 @@ export default function BookingForm() {
                   </div>
 
                   {/* Date Selection */}
-                  <div className="space-y-2">
-                    <Label htmlFor="date" className="text-white">
-                      <Calendar className="w-4 h-4 inline mr-2" />
+                  <div className="space-y-3">
+                    <Label htmlFor="date" className="text-gray-900 font-bold text-sm flex items-center">
+                      <Calendar className="w-4 h-4 inline mr-2 text-stellar-gold" />
                       Preferred Date
                     </Label>
                     <Input
                       type="date"
                       value={formData.date}
                       onChange={(e) => updateFormData('date', e.target.value)}
-                      className="bg-space-blue/50 border-stellar-gold/30 text-white"
+                      className="bg-white border-2 border-gray-300 text-gray-900 font-medium h-12 focus:border-stellar-gold"
                       min={new Date().toISOString().split('T')[0]}
                     />
                   </div>
 
                   {/* Time Slot */}
-                  <div className="space-y-2">
-                    <Label htmlFor="time" className="text-white">
-                      <Clock className="w-4 h-4 inline mr-2" />
+                  <div className="space-y-3">
+                    <Label htmlFor="time" className="text-gray-900 font-bold text-sm flex items-center">
+                      <Clock className="w-4 h-4 inline mr-2 text-stellar-gold" />
                       Time Slot
                     </Label>
                     <Select
                       value={formData.timeSlot}
                       onValueChange={(value) => updateFormData('timeSlot', value)}
                     >
-                      <SelectTrigger className="bg-space-blue/50 border-stellar-gold/30 text-white">
+                      <SelectTrigger className="bg-white border-2 border-gray-300 text-gray-900 font-medium h-12 focus:border-stellar-gold">
                         <SelectValue placeholder="Select time" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-white">
                         {timeSlots.map((slot) => (
-                          <SelectItem key={slot} value={slot}>
+                          <SelectItem key={slot} value={slot} className="text-gray-900">
                             {slot}
                           </SelectItem>
                         ))}
@@ -202,9 +202,9 @@ export default function BookingForm() {
                   </div>
 
                   {/* Participants */}
-                  <div className="space-y-2">
-                    <Label htmlFor="participants" className="text-white">
-                      <Users className="w-4 h-4 inline mr-2" />
+                  <div className="space-y-3">
+                    <Label htmlFor="participants" className="text-gray-900 font-bold text-sm flex items-center">
+                      <Users className="w-4 h-4 inline mr-2 text-stellar-gold" />
                       Number of Participants
                     </Label>
                     <Input
@@ -213,60 +213,63 @@ export default function BookingForm() {
                       max="12"
                       value={formData.participants}
                       onChange={(e) => updateFormData('participants', parseInt(e.target.value))}
-                      className="bg-space-blue/50 border-stellar-gold/30 text-white"
+                      className="bg-white border-2 border-gray-300 text-gray-900 font-medium h-12 focus:border-stellar-gold"
                     />
                   </div>
 
                   {/* Contact Information */}
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-white">Full Name</Label>
+                  <div className="space-y-3">
+                    <Label htmlFor="name" className="text-gray-900 font-bold text-sm">Full Name *</Label>
                     <Input
                       value={formData.name}
                       onChange={(e) => updateFormData('name', e.target.value)}
-                      className="bg-space-blue/50 border-stellar-gold/30 text-white"
+                      className="bg-white border-2 border-gray-300 text-gray-900 font-medium h-12 focus:border-stellar-gold"
                       required
+                      placeholder="Enter your full name"
                     />
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-white">Email Address</Label>
+                  <div className="space-y-3">
+                    <Label htmlFor="email" className="text-gray-900 font-bold text-sm">Email Address *</Label>
                     <Input
                       type="email"
                       value={formData.email}
                       onChange={(e) => updateFormData('email', e.target.value)}
-                      className="bg-space-blue/50 border-stellar-gold/30 text-white"
+                      className="bg-white border-2 border-gray-300 text-gray-900 font-medium h-12 focus:border-stellar-gold"
                       required
+                      placeholder="your.email@example.com"
                     />
                   </div>
 
-                  <div className="space-y-2 md:col-span-2">
-                    <Label htmlFor="phone" className="text-white">Phone Number</Label>
+                  <div className="space-y-3 md:col-span-2">
+                    <Label htmlFor="phone" className="text-gray-900 font-bold text-sm">Phone Number</Label>
                     <Input
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => updateFormData('phone', e.target.value)}
-                      className="bg-space-blue/50 border-stellar-gold/30 text-white"
+                      className="bg-white border-2 border-gray-300 text-gray-900 font-medium h-12 focus:border-stellar-gold"
+                      placeholder="(555) 123-4567"
                     />
                   </div>
                 </div>
 
                 {/* Special Requests */}
-                <div className="space-y-2">
-                  <Label htmlFor="requests" className="text-white">Special Requests or Questions</Label>
+                <div className="space-y-3">
+                  <Label htmlFor="requests" className="text-gray-900 font-bold text-sm">Special Requests or Questions</Label>
                   <Textarea
                     value={formData.specialRequests}
                     onChange={(e) => updateFormData('specialRequests', e.target.value)}
-                    className="bg-space-blue/50 border-stellar-gold/30 text-white"
-                    placeholder="Any special accommodations, experience level, or questions..."
+                    className="bg-white border-2 border-gray-300 text-gray-900 font-medium min-h-[100px] focus:border-stellar-gold"
+                    placeholder="Any special accommodations, experience level, dietary restrictions, or questions..."
                   />
                 </div>
 
                 <Button
                   type="submit"
                   disabled={bookingMutation.isPending}
-                  className="w-full bg-gradient-to-r from-stellar-gold to-aurora-green hover:from-stellar-gold/80 hover:to-aurora-green/80 text-black font-semibold py-3 text-lg transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-stellar-gold to-aurora-green hover:from-stellar-gold/90 hover:to-aurora-green/90 text-black font-bold py-4 text-lg transition-all duration-300 h-14"
                 >
-                  {bookingMutation.isPending ? "Processing..." : "Book Experience"}
+                  {bookingMutation.isPending ? "Processing Your Booking..." : "Book Your Experience Now"}
                 </Button>
               </form>
             </CardContent>
