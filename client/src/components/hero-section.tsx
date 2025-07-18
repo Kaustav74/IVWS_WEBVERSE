@@ -87,18 +87,21 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 sm:mb-6 bg-gradient-to-r from-stellar-gold via-aurora-green to-nebula-pink bg-clip-text text-transparent"
+          className="font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 sm:mb-6 visible-text leading-tight"
         >
-          StarScope
+          <span className="block text-white">Experience Professional Astronomy with</span>
+          <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-stellar-gold">
+            StarScope
+          </span>
         </motion.h1>
         
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-xl sm:text-2xl md:text-4xl mb-6 sm:mb-8 visible-text"
+          className="text-xl sm:text-2xl md:text-3xl mb-6 sm:mb-8 visible-text"
         >
-          Premium Stargazing & Astrophotography Experience
+          Premium Stargazing & Astrophotography Services
         </motion.h2>
         
         <motion.p
@@ -107,7 +110,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.6 }}
           className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 visible-text max-w-3xl mx-auto leading-relaxed px-4"
         >
-          Making astronomy accessible to everyone through guided telescope tours, 
+          Join us for unforgettable stargazing experiences through guided tours, 
           astrophotography sessions, and live celestial event streams.
         </motion.p>
         
@@ -118,13 +121,17 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.9 }}
           className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
         >
-          <Button className="bg-gradient-to-r from-stellar-gold to-aurora-green text-space-blue px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:scale-105 transition-transform duration-300 animate-glow">
+          <Button 
+            className="bg-gradient-to-r from-stellar-gold to-aurora-green text-space-blue px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:scale-105 transition-transform duration-300 animate-glow"
+            onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             <Telescope className="mr-2" size={18} />
             Start Stargazing
           </Button>
           <Button 
             variant="outline"
             className="border-2 border-stellar-gold text-stellar-gold px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-stellar-gold hover:text-space-blue transition-all duration-300"
+            onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <Play className="mr-2" size={18} />
             Watch Live Stream

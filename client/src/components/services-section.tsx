@@ -5,47 +5,47 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const services = [
   {
-    title: "Guided Tours",
-    description: "Expert-led telescope tours revealing hidden cosmic wonders and constellation stories.",
-    price: "$75",
+    title: "Guided Stargazing Tours",
+    description: "On-site stargazing sessions at observatories and dark-sky sites conducted by certified astronomy guides.",
+    price: "From $75",
     image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
     features: [
-      { icon: Clock, text: "2-3 hours" },
-      { icon: Users, text: "Small groups (8 max)" },
-      { icon: Star, text: "All skill levels" }
+      { icon: Star, text: "Observatory & dark-sky locations" },
+      { icon: Users, text: "Certified astronomy guides" },
+      { icon: MessageCircle, text: "Laser pointer tours & storytelling" }
     ]
   },
   {
-    title: "Astrophotography",
-    description: "Capture stunning images of celestial objects with professional equipment and guidance.",
-    price: "$150",
+    title: "Astrophotography Sessions",
+    description: "Personalized astrophotography shoots with training workshops for amateur photographers.",
+    price: "From $120",
     image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
     features: [
-      { icon: Clock, text: "4-6 hours" },
-      { icon: Camera, text: "Equipment provided" },
-      { icon: Download, text: "Digital copies included" }
+      { icon: Camera, text: "Personalized photo sessions" },
+      { icon: Download, text: "Digital & printed frames" },
+      { icon: GraduationCap, text: "Training workshops included" }
     ]
   },
   {
-    title: "Live Streams",
-    description: "Join live broadcasts of eclipses, meteor showers, and rare celestial events.",
-    price: "$25",
+    title: "Live Celestial Event Streams",
+    description: "Real-time streaming of eclipses, meteor showers, and planetary conjunctions with expert commentary.",
+    price: "From $35",
     image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
     features: [
-      { icon: Radio, text: "HD streaming" },
-      { icon: MessageCircle, text: "Interactive chat" },
-      { icon: Globe, text: "Global access" }
+      { icon: Radio, text: "Major celestial events live" },
+      { icon: Globe, text: "Global access for subscribers" },
+      { icon: MessageCircle, text: "Expert commentary & Q&A" }
     ]
   },
   {
-    title: "Webinars",
-    description: "Learn astronomy fundamentals and advanced techniques from expert astronomers.",
-    price: "$40",
+    title: "Educational Webinars",
+    description: "Online and offline learning modules covering telescope handling, astrophysics, and night-sky navigation.",
+    price: "From $45",
     image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
     features: [
-      { icon: GraduationCap, text: "Expert instructors" },
-      { icon: Award, text: "Certificates available" },
-      { icon: RotateCcw, text: "Recorded sessions" }
+      { icon: GraduationCap, text: "Online & offline modules" },
+      { icon: Award, text: "Telescope handling & astrophysics" },
+      { icon: Users, text: "For students & enthusiasts" }
     ]
   }
 ];
@@ -65,7 +65,7 @@ export default function ServicesSection() {
             Our Cosmic Services
           </h2>
           <p className="text-lg sm:text-xl visible-text max-w-3xl mx-auto px-4">
-            Discover the universe through our premium stargazing experiences designed for all skill levels
+            Establish your online presence with professional astronomy services - from guided tours to educational workshops
           </p>
         </motion.div>
 
@@ -112,7 +112,10 @@ export default function ServicesSection() {
                     ))}
                   </div>
                   
-                  <Button className="w-full bg-stellar-gold text-space-blue py-3 rounded-full font-semibold hover:bg-aurora-green transition-colors duration-300">
+                  <Button 
+                    className="w-full bg-stellar-gold text-space-blue py-3 rounded-full font-semibold hover:bg-aurora-green transition-colors duration-300"
+                    onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
                     Book - {service.price}
                   </Button>
                 </CardContent>

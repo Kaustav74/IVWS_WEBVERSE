@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import ServicesSection from "@/components/services-section";
 import ConstellationMap from "@/components/constellation-map";
+import BookingForm from "@/components/booking-form";
 import MembershipPlans from "@/components/membership-plans";
 import EventsSection from "@/components/events-section";
 import FloatingActionButton from "@/components/floating-action-button";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <HeroSection />
       <ServicesSection />
       <ConstellationMap />
+      <BookingForm />
       <MembershipPlans />
       <EventsSection />
       <FloatingActionButton />

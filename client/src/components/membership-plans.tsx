@@ -6,39 +6,43 @@ import { Card, CardContent } from "@/components/ui/card";
 const plans = [
   {
     name: "Stargazer",
-    subtitle: "Perfect for beginners",
+    subtitle: "Monthly subscription for casual astronomy enthusiasts",
     price: 29,
     features: [
-      "2 guided tours per month",
-      "Access to live streams",
-      "Monthly constellation guide",
-      "Community forum access"
+      "Early booking access to tours",
+      "Basic educational webinars",
+      "Mobile constellation app",
+      "Community forum access",
+      "Email support",
+      "Monthly astrophotography wallpapers"
     ],
     featured: false
   },
   {
-    name: "Astronomer",
-    subtitle: "For serious enthusiasts",
-    price: 79,
+    name: "Explorer",
+    subtitle: "Enhanced benefits for dedicated sky watchers",
+    price: 59,
     features: [
-      "Unlimited guided tours",
-      "2 astrophotography sessions",
-      "All webinars included",
-      "Priority event access",
-      "Personal telescope rental"
+      "All Stargazer benefits",
+      "Priority booking access",
+      "Exclusive live stream events",
+      "Advanced webinar modules",
+      "Discounted astrophotography sessions",
+      "High-resolution image downloads"
     ],
     featured: true
   },
   {
-    name: "Cosmic Explorer",
-    subtitle: "Premium experience",
-    price: 149,
+    name: "Cosmic Pro",
+    subtitle: "Annual membership with premium perks and exclusive access",
+    price: 99,
     features: [
-      "Everything in Astronomer",
-      "Private group sessions",
-      "Advanced equipment access",
-      "Exclusive location access",
-      "One-on-one mentorship"
+      "All Explorer benefits",
+      "Maximum booking priority",
+      "Private celestial event streams",
+      "Professional astrophotography discounts",
+      "Expert 1-on-1 consultations",
+      "Annual printed astrophotography calendar"
     ],
     featured: false
   }
@@ -59,7 +63,7 @@ export default function MembershipPlans() {
             Membership Plans
           </h2>
           <p className="text-lg sm:text-xl visible-text max-w-3xl mx-auto px-4">
-            Choose your cosmic journey and unlock exclusive stargazing experiences
+            Monthly and annual subscriptions with early booking access, discounts, and exclusive benefits
           </p>
         </motion.div>
 
