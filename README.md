@@ -1,3 +1,4 @@
 # IVWS_WEBVERSE
 
-StarScope is premium stargazing and astrophotography service aiming to make astonomy accessible to everyone. They conduct guided telescope tours, astrophotography sessions, and online live streams of celestial events. Their mission is to spark curiousity about space and make night-sky exploration a memorable experience for all age groups
+StarScope is a premium stargazing and astrophotography service aiming to make astronomy accessible to everyone. We conduct guided telescope tours, astrophotography sessions, and online live streams of celestial events. Our mission is to spark curiosity about space and make night-sky exploration a memorable experience for all age groups.
+
