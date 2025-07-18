@@ -1,4 +1,4 @@
-# StarScope Astronomy Application
+# StarScope 
 
 ## Overview
 
